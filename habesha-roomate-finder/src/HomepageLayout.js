@@ -29,6 +29,7 @@ const HomepageHeading = ({ mobile }) => (
       content='Habesha Roomate Finder'
       inverted
       style={{
+        verticalAlign: 'top',
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
@@ -44,12 +45,13 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
+        
       }}
     />
-    <Button primary size='huge'>
+    {/* <Button primary size='huge'>
       Sign Up
       <Icon name='right arrow' />
-    </Button>
+    </Button> */}
   </Container>
 )
 

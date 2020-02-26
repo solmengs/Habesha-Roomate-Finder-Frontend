@@ -14,9 +14,9 @@ class UserProfile extends Component {
         })
     }
     userProffile = () => {
-        return <UserCard userProfile={this.props.userProfile} deletetenants={this.props.deletetenants} />
-
-
+        if (this.props.userProfile.id) {
+            return <UserCard userProfile={this.props.userProfile} deletetenants={this.props.deletetenants} editUser={this.props.editUser}  AddInterest={this.props.AddInterest}/>
+        }
     }
 
 

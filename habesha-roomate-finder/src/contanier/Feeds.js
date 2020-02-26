@@ -23,10 +23,12 @@ class MyProfile extends React.Component{
 
       
       everyTenants=()=>{
+        if (this.props.tenants){
         return this.props.tenants.map(tenants => {
             return <FeedCard tenants={tenants} deletetenants={this.props.deletetenants}/>
           }
             )}
+        }
          
     
 

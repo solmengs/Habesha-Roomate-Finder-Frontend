@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
 
   render() { 
     return(
-        this.props.newLogin ? ( <Redirect to="/profile"/> ) : (
+        this.props.user.id ? ( <Redirect to="/profile"/> ) : (
       <>
       <h3 className="form-title">Please Login to view your account</h3>
       <form className="ui form" onSubmit={this.handleOnSubmit}>

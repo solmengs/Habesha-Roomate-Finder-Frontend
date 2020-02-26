@@ -9,8 +9,10 @@ export default class MenuExampleSecondary extends Component {
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name })
   }
+  
 
   render() {
+    const loggedIn = this.props.userView.id
     const { activeItem } = this.state
 
     return (
@@ -27,39 +29,41 @@ export default class MenuExampleSecondary extends Component {
           active={activeItem === 'about'}
           onClick={this.handleItemClick}
         />
-        <Menu.Item
+        {loggedIn ?( <Menu.Item
           as={NavLink} to="/profile"
           name='my profile'
           active={activeItem === 'profile'}
           onClick={this.handleItemClick}
-        />
-        { <Menu.Item
+        />): null}
+
+        { loggedIn ?(<Menu.Item
           as={NavLink} to="/feeds"
           name='Feeds'
           active={activeItem === 'feeds'}
           onClick={this.handleItemClick}
-        />}
+        />): null}
         <Menu.Menu position='right'>
           
-        { <Menu.Item
+        { !loggedIn ?( <Menu.Item
           as={NavLink} to="/login"
           name='login'
+            
           active={activeItem === 'login'}
-          onClick={this.handleItemClick}
-        />}
-        <Menu.Item
+          onClick={this.handleItemClick} />) : null}
+
+        { !loggedIn ?(<Menu.Item
           as={NavLink} to="/signup"
           name='sign up'
           active={activeItem === 'sign up'}
           onClick={this.handleItemClick}
-        />
+        />): null}
         
-        <Menu.Item
+        { loggedIn ?(<Menu.Item
           as={NavLink} to="/logout"
           name='logout'
           active={activeItem === 'logout'}
           onClick={this.handleItemClick}
-        />
+        />): null}
 
         </Menu.Menu>
       </Menu>

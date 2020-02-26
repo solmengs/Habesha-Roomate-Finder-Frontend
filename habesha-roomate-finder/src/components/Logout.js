@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 
 class Logout extends Component {
 
-handleLogout=()=>{ 
-  this.props.logout(this.props)
-         }
-
+    componentDidMount() {
+        this.props.onLogout();
+        this.props.history.push("/login")
+    }
         
 
     render() {
         return (
             <div>
-               <form className="ui form" onClick={this.handleLogout}></form> 
+               <h2>Logging out...</h2> 
             </div>
         )
     }
