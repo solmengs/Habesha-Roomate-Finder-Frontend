@@ -5,7 +5,7 @@ import HomepageLayout from './HomepageLayout'
 import SignupForm from './SignupForm'
 import { api } from './services/api'
 import LoginForm from './LoginForm'
-import Feeds from './contanier/Feeds'
+import TenantContanier from './contanier/TenantContanier'
 import Logout from './components/Logout'
 import InterestForm from './InterestForm'
 
@@ -28,7 +28,14 @@ class App extends React.Component {
     super()
     this.state = {
       auth: {
-        user: {},
+        user: {
+          name: "",
+          age:"",
+          img:"",
+          id:null,
+          interests:[],
+          languages:[],
+        },
         newSignup: false
       },
       tenants: []
@@ -202,10 +209,10 @@ class App extends React.Component {
           />}
 
           {<Route
-            path="/feeds"
+            path="/tenants"
             exact
             render={(props) =>
-              <Feeds
+              <TenantContanier
                 {...props}
                 tenants={this.state.tenants}
               />}
@@ -216,7 +223,7 @@ class App extends React.Component {
             exact
             render={(props) => <UserProfile {...props}
               userProfile={this.state.auth.user} editUser={this.editUser}
-              AddInterest={this.state.auth.user} />}
+              AddInt={this.state.auth.user} AddInterest={this.AddInterest}/>}
           />}
 
 

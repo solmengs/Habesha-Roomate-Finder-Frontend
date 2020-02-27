@@ -23,14 +23,14 @@ class InterestForm extends Component {
     
           handleFormSubmit = e => {
             e.preventDefault();
-            let {activities, note} = this.state
-            this.props.AddInterest({activities: activities, note: note});
+            
+            this.props.AddInterest(this.state);
             
           };
     
     
     
-      render() {
+      render() { console.log(this.props)
         const { open, closeOnEscape, closeOnDimmerClick } = this.state
         
         return(

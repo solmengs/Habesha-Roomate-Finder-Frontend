@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Card, Icon, Image, Button} from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Grid} from 'semantic-ui-react'
 
 
- class TenantsCard extends Component {
+ class TenantCard extends Component {
 
 
     
@@ -11,11 +11,11 @@ import { Card, Icon, Image, Button} from 'semantic-ui-react'
         this.props.deletetenants(this.props.tenants)
       }
     
-      render() {console.log(this.props)
+      render() {
         return(
-            <div class="ui link cards">
+            
 
-<Card.Group Row width={3}>
+
     <Card>
       <Card.Content>
         <Image
@@ -30,19 +30,21 @@ import { Card, Icon, Image, Button} from 'semantic-ui-react'
         </Card.Description>
       </Card.Content>
       </Card>
-      </Card.Group>
+      
+
+ 
+
               
          
                
             
     
               
-            {/* <button className="ui button" onClick={this.handleDeleteButton}>Delete tenants</button> */}
-           
+            
           
             
-          </div>
-          )
+          
+        )
         }
     }
     
@@ -50,4 +52,4 @@ import { Card, Icon, Image, Button} from 'semantic-ui-react'
     
 
     
-export default TenantsCard
+export default TenantCard

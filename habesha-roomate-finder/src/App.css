@@ -68,3 +68,13 @@ h3.form-title {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* .ui.grid {
+  margin-top: 6rem!important;
+  margin-bottom: 6rem!important;
+} */
+/* .ui.card  */
+
+.tenant-card-container{
+  margin: 4.125em 0.5em!important;
+}

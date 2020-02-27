@@ -37,9 +37,9 @@ export default class MenuExampleSecondary extends Component {
         />): null}
 
         { loggedIn ?(<Menu.Item
-          as={NavLink} to="/feeds"
-          name='Feeds'
-          active={activeItem === 'feeds'}
+          as={NavLink} to="/tenants"
+          name='Tenants'
+          active={activeItem === 'tenants'}
           onClick={this.handleItemClick}
         />): null}
         <Menu.Menu position='right'>

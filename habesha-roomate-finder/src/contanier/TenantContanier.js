@@ -1,6 +1,7 @@
 import React from 'react'
-import FeedCard from '../components/FeedCard'
+import TenantCard from '../components/TenantCard'
 import {api} from '../services/api';
+import { Card, Icon, Image, Button, Grid, Header} from 'semantic-ui-react'
 
 
 class MyProfile extends React.Component{
@@ -25,7 +26,7 @@ class MyProfile extends React.Component{
       everyTenants=()=>{
         if (this.props.tenants){
         return this.props.tenants.map(tenants => {
-            return <FeedCard tenants={tenants} deletetenants={this.props.deletetenants}/>
+            return <TenantCard tenants={tenants} deletetenants={this.props.deletetenants}/>
           }
             )}
         }
@@ -35,10 +36,18 @@ class MyProfile extends React.Component{
     render(){ 
 
         return(
-            <div>
+        < >
+           
+            <Card.Group className="tenant-card-container">  
             {this.everyTenants()}
-            </div>
+            </Card.Group>    
+            
+        </>    
+   
+              
+
         )
+
     }
 }
 export default MyProfile
