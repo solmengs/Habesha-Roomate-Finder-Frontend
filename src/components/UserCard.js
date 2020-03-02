@@ -6,6 +6,7 @@ import ActivitiesCard from './ActivitiesCard'
 import NoteCard from './NoteCard'
 
 class UserCard extends Component {
+  
 
   eachActivities = () => {
       if (this.props.userProfile.interests){
@@ -25,12 +26,19 @@ class UserCard extends Component {
 
 
     render() {
+      
         return (
   <>
+  
    <Grid celled>
     <Grid.Row>
       <Grid.Column width={5}>
-          <Image src={this.props.userProfile.img} wrapped ui={false} />
+        <Segment>
+      
+          <Image  src={this.props.userProfile.img} wrapped ui={false} />
+          
+          <button className="ui button"  onClick={this.handleDeleteButton}>Delete tenants</button>
+          </Segment>
       </Grid.Column>
           <Grid.Column width={11}>
           <>
@@ -56,10 +64,11 @@ class UserCard extends Component {
                       
                     </>  
       </Grid.Column>
-        <button className="ui button"  onClick={this.handleDeleteButton}>Delete tenants</button>
+       
   
     </Grid.Row>
   </Grid>
+  
  </>
  )}
     

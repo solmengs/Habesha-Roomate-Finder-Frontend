@@ -65,8 +65,9 @@ h3.form-title {
 
 .ui.inverted.vertical.center.aligned.segment {
   background-image: url('https://images.squarespace-cdn.com/content/59f0a6e9f09ca487886b21e2/1521809681164-3WG5QQGC2VHRA5IROSCQ/Artboard+1+copy871C+Landscap.png?format=1000w&content-type=image%2Fpng');
+  
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover
 }
 
 /* .ui.grid {

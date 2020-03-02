@@ -9,6 +9,7 @@ import TenantContanier from './contanier/TenantContanier'
 import Logout from './components/Logout'
 import InterestForm from './InterestForm'
 
+
 import UserProfile from './contanier/UserProfile'
 
 import { BrowserRouter as Router, Route } from "react-router-dom"
@@ -142,6 +143,8 @@ class App extends React.Component {
 
 
   }
+  
+  
 
   //   userProfile=()=>{
   //   fetch(userURL)
@@ -178,7 +181,10 @@ class App extends React.Component {
     console.log(this.state)
 
     return (
+
       <div>
+       
+        
         <Router>
           <NavBar userView={this.state.auth.user} />
 
@@ -241,10 +247,9 @@ class App extends React.Component {
 
 
 
+        </div>
 
-
-      </div>
-    );
+    )
   }
 }
 

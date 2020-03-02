@@ -25,7 +25,7 @@ class UserProfile extends Component {
             <>
             <Segment.Group>
                 {this.userProffile()}
-                </Segment.Group>
+            </Segment.Group>
             </>
 
         )
