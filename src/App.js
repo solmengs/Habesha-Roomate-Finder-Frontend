@@ -10,9 +10,11 @@ import Logout from './components/Logout'
 import InterestForm from './InterestForm'
 
 
+
 import UserProfile from './contanier/UserProfile'
 
 import { BrowserRouter as Router, Route } from "react-router-dom"
+
 
 const userURL = "http://localhost:3000/users"
 const interestURL = "http://localhost:3000/interests"
@@ -134,15 +136,15 @@ class App extends React.Component {
   }
 
   getTenants = () => {
-    fetch(userURL)
+    return fetch(userURL)
       .then(res => res.json())
       .then(tenants => this.setState({
         tenants: tenants
 
       }))
 
-
   }
+  
   
   
 
@@ -187,6 +189,7 @@ class App extends React.Component {
         
         <Router>
           <NavBar userView={this.state.auth.user} />
+       
 
           <Route
             path="/"
@@ -241,7 +244,7 @@ class App extends React.Component {
             render={(props) => <Logout {...props} onLogout={this.logout} />}
           />}
 
-
+           
 
         </Router>
 

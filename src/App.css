@@ -70,12 +70,17 @@ h3.form-title {
   background-size: cover
 }
 
-/* .ui.grid {
-  margin-top: 6rem!important;
-  margin-bottom: 6rem!important;
-} */
+.ui.grid {
+  margin-top: 1rem!important;
+  margin-left: 1rem!important;
+  margin-right: 1rem!important;
+  margin-bottom: 2rem!important;
+} 
 /* .ui.card  */
 
 .tenant-card-container{
   margin: 4.125em 0.5em!important;
 }
+/* .ui-gird{
+margin: 5em 1.5em!important ;
+} */

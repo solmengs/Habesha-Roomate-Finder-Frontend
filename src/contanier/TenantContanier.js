@@ -1,7 +1,8 @@
 import React from 'react'
 import TenantCard from '../components/TenantCard'
 import {api} from '../services/api';
-import { Card, Icon, Image, Button, Grid, Header} from 'semantic-ui-react'
+import SearchForm from '../components/SearchForm'
+import { Card, Icon, Image, Button, Grid, Header, Dropdown, Search, Segment} from 'semantic-ui-react'
 
 
 class MyProfile extends React.Component{
@@ -14,7 +15,7 @@ class MyProfile extends React.Component{
             }
         })}
 
-    everyUser = () => { console.log(this.props.getCurrentUser(), "props")
+    everyUser = () => { 
       
         // return this.props.getCurrentUser.map(user => {
         //   return <UserCard user={user} deleteuser={this.props.deleteuser}/>
@@ -37,11 +38,30 @@ class MyProfile extends React.Component{
 
         return(
         < >
+        <Grid>
+          
+         <Dropdown
+          text='Filter'
+          icon='filter'
+          floating
+          labeled
+          button
+          className='icon'
+        >
+          <Dropdown.Menu>
+            <Dropdown.Header icon='tags' content='Filter by tag' />
+            <Dropdown.Divider />
+            <Dropdown.Item icon='attention' text='Important' />
+            <Dropdown.Item icon='comment' text='Announcement' />
+            <Dropdown.Item icon='conversation' text='Discussion' />
+          </Dropdown.Menu>
+        </Dropdown>
+            <SearchForm  tenants={this.props.tenants}/>  
            
             <Card.Group className="tenant-card-container">  
             {this.everyTenants()}
-            </Card.Group>    
-            
+            </Card.Group>  
+            </Grid>
         </>    
    
               

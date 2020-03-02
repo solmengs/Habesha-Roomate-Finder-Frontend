@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Icon, Image, Button, Grid} from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Grid, Dropdown} from 'semantic-ui-react'
 
 
  class TenantCard extends Component {
@@ -11,10 +11,10 @@ import { Card, Icon, Image, Button, Grid} from 'semantic-ui-react'
         this.props.deletetenants(this.props.tenants)
       }
     
-      render() {
+      render() {console.log(this.props, "filtering...")
         return(
             
-
+         
 
     <Card>
       <Card.Content>
