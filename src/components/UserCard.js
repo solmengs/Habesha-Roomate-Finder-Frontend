@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Icon, Image, Button, Grid, Segment, Header } from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Grid, Segment, Header,Advertisement } from 'semantic-ui-react'
 import EditProfileForm from './EditProfileForm'
 import InterestForm from '../InterestForm'
 import ActivitiesCard from './ActivitiesCard'
@@ -30,25 +30,24 @@ class UserCard extends Component {
         return (
   <>
   
+   
+   
+   
    <Grid celled>
-    <Grid.Row>
-      <Grid.Column width={5}>
-        <Segment>
-      
-          <Image  src={this.props.userProfile.img} wrapped ui={false} />
-          
+        <Advertisement unit='masive' >
+          <Image  circular  size='mediume' src={this.props.userProfile.img} />
           <button className="ui button"  onClick={this.handleDeleteButton}>Delete tenants</button>
-          </Segment>
-      </Grid.Column>
-          <Grid.Column width={11}>
-          <>
-              
+          <EditProfileForm editUser={this.props.editUser} userProfile={this.props.userProfile}/>      
           <h2> Name: {this.props.userProfile.name}</h2>
           <p>{this.props.AddInterest.interest}</p>     
           <h3> Age:  {this.props.userProfile.age}</h3>                
-          <EditProfileForm editUser={this.props.editUser} userProfile={this.props.userProfile}/>      
-          
-          
+        </Advertisement>
+        
+    <Grid.Row>
+    
+          <Grid.Column width={11}>
+          <>
+       
             <Segment>
             
               <Header as='h3'>Activities</Header>

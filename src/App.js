@@ -8,6 +8,7 @@ import LoginForm from './LoginForm'
 import TenantContanier from './contanier/TenantContanier'
 import Logout from './components/Logout'
 import InterestForm from './InterestForm'
+import About from './contanier/About'
 
 
 
@@ -81,7 +82,6 @@ class App extends React.Component {
       return {
         auth: { ...prevState.auth.user, user },
         newSignup: true,
-
       }
     }, () => this.postUser(user))
   }
@@ -94,7 +94,9 @@ class App extends React.Component {
       },
       body: JSON.stringify({ user: user })
     }).then(res => res.json())
-      .then(data => console.log(data))
+      .then(() => {
+        this.login(user)
+      })
   }
 
 
@@ -196,6 +198,12 @@ class App extends React.Component {
             exact
             render={() => <HomepageLayout />}
           />
+
+          <Route
+            path="/about"
+            exact
+            render={() => <About />}
+          />
           {
             <Route
               path="/login"
@@ -210,11 +218,12 @@ class App extends React.Component {
           {<Route
             path="/signup"
             exact
-            render={() =>
+            render={(props) =>
               <SignupForm
+                {...props}
                 addUser={this.addUser}
                 newSignup={this.state.newSignup}
-              />}
+              /> }
           />}
 
           {<Route

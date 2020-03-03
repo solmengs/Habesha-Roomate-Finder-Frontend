@@ -6,6 +6,9 @@ import { Card, Icon, Image, Button, Grid, Header, Dropdown, Search, Segment} fro
 
 
 class MyProfile extends React.Component{
+    state = {
+        filter: ""
+    }
 
 
     componentDidMount() {
@@ -23,10 +26,14 @@ class MyProfile extends React.Component{
         // )
       }
 
+      setFilter = value =>
+        this.setState({filter: value})
+
       
       everyTenants=()=>{
-        if (this.props.tenants){
-        return this.props.tenants.map(tenants => {
+        if (this.props.tenants.length > 0){
+            let filteredTenants = this.props.tenants.filter(tenant => tenant.name.includes(this.state.filter) )
+        return filteredTenants.map(tenants => {
             return <TenantCard tenants={tenants} deletetenants={this.props.deletetenants}/>
           }
             )}
@@ -40,23 +47,8 @@ class MyProfile extends React.Component{
         < >
         <Grid>
           
-         <Dropdown
-          text='Filter'
-          icon='filter'
-          floating
-          labeled
-          button
-          className='icon'
-        >
-          <Dropdown.Menu>
-            <Dropdown.Header icon='tags' content='Filter by tag' />
-            <Dropdown.Divider />
-            <Dropdown.Item icon='attention' text='Important' />
-            <Dropdown.Item icon='comment' text='Announcement' />
-            <Dropdown.Item icon='conversation' text='Discussion' />
-          </Dropdown.Menu>
-        </Dropdown>
-            <SearchForm  tenants={this.props.tenants}/>  
+         
+            <SearchForm  tenants={this.props.tenants} onSetFilter={this.setFilter} filter={this.state.filter}/>  
            
             <Card.Group className="tenant-card-container">  
             {this.everyTenants()}

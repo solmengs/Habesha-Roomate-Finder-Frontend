@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "globalize": "^1.4.2",
     "i18next": "^19.3.2",
     "i18next-browser-languagedetector": "^4.0.2",
@@ -15,6 +16,7 @@
     "react-i18next": "^11.3.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-upload-file": "^2.0.0-beta.6",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2"
   },

@@ -21,15 +21,15 @@ class SignupForm extends React.Component {
       handleFormSubmit = e => {
         e.preventDefault();
         this.props.addUser(this.state);
-        this.setState(INITIAL_STATE);
-        
+        // this.setState(INITIAL_STATE);
+        this.props.history.push("/profile")
       };
 
 
 
   render() {
     return(
-      this.props.newSignUp ? ( <Redirect to="/login"/> ) : (
+      this.props.newSignUp ? ( <Redirect to="/profile"/> ) : (
      
       <>
      
@@ -62,6 +62,7 @@ class SignupForm extends React.Component {
         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
       </div>
       <button type="submit" className="ui button">Submit</button>
+      
     </form>
     </>
       )

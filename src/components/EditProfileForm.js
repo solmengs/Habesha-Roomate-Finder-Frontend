@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Button, Form, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Form, Header, Image, Modal, file } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 class EditProfileForm extends Component {  
     state = { 
         open: false, 
         name: this.props.userProfile.name,
-        age: "",
+        age: this.props.userProfile.age,
         img: "",
         gender: "",
         username: "",
@@ -62,11 +62,12 @@ class EditProfileForm extends Component {
           </div>
           <div className="field">
             <label>age</label>
-            <input type="text" name="age" value={this.props.userProfile.age} onChange={this.handleChange} placeholder="age" />
+            <input type="text" name="age" value={this.state.age} onChange={this.handleChange} placeholder="age" />
           </div>
           <div className="field">
             <label> Image</label>
-            <input type="text" name="img" value={this.props.userProfile.img} onChange={this.handleChange} placeholder="Profile Image" />
+            <Image src={this.state.age} />
+            <input type="text" name="img" value={this.state.img}onChange={this.handleChange} placeholder="Profile Image" />
           </div>
           {/* <div className="field">
             <label>Gender</label>
